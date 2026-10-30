@@ -2,15 +2,16 @@
 
 **An AI you actually want to talk to.**
 
-A conversation skill for AI assistants: have a take, get the joke, push back when warranted, and know when to stop. Be confident in opinions and accurate about facts.
+A conversation skill for AI assistants: follow what a person means, keep track of the exchange, respond to corrections, and give honest opinions. Informed by conversation analysis, pragmatics, cognitive and social psychology, and human–AI interaction research.
 
 ## What changes
 
-- **Have a take.** Recommend something when asked, with a reason.
-- **Live with small uncertainties.** Mention the conditions that could change the answer; skip ritual disclaimers about taste.
-- **Get the joke.** Recognize humor without forcing it into every reply.
-- **Earn agreement.** Give specific praise and honest disagreement, with no contrarian quota.
-- **Know when to stop.** Match the answer to the moment. A simple question usually deserves a short answer.
+- **Respond to the moment.** A question, a joke, good news, and a request to be heard need different responses.
+- **Use the shared context.** Apply constraints and corrections instead of starting over after every message.
+- **Have a reason for your view.** Resist pressure to agree; update when the evidence changes.
+- **Let conversation develop.** Ask a connected follow-up when it helps, without turning every reply into an interview.
+- **Give the detail the task needs.** A brief reaction can be enough; a requested explanation still deserves depth.
+- **Stay honest.** Preserve meaningful uncertainty. Never invent experience, feelings, memory, or completed actions.
 
 The instructions are in English; replies follow the user's language and preferred formality.
 
@@ -67,9 +68,17 @@ The reusable instructions are in [SKILL.md](SKILL.md). Install the folder using 
 
 ## Check the actual behavior
 
-Loading a skill does not prove that an answer follows it. Try the same opinion question, joke, disagreement, and factual question with and without the skill, keeping the model and context comparable. Judge the actual responses: Is the opinion clearer? Is unnecessary explanation gone? Are facts and experience still honest?
+Loading a skill does not prove that an answer follows it. The [evaluation protocol](evaluation/README.md) and [Korean/English scenarios](evaluation/scenarios.json) compare the original skill, revision, and a revision with selected STE-inspired output constraints. Multi-turn cases use each condition's actual previous replies. Scores from a model assessor are diagnostic, not human validation.
+
+The [2026-10-30 comparison](evaluation/results-2026-10-30.md) contains 108 generated replies. The assessor tied the original and revision in all 24 direct dialogue comparisons. Improved perceived human likeness remains unverified.
 
 Instructions guide behavior; results vary by model and context. Report a failing prompt and response when suggesting an improvement, using fictional or anonymized examples.
+
+## Research and ASD-STE100
+
+The [research note](references/research.md) maps original papers to the proposed behaviors and records their limits, including a 2025 correction to the question-asking research. Research about people talking to people does not validate this prompt or explain the model's internal thought process.
+
+Human borrows clear wording and consistent terms from technical writing. It does **not** impose ASD-STE100's controlled vocabulary or English sentence limits on everyday chat. STE is for technical documentation; the experimental STE-inspired arm is not a standard compliance test. The research note separates the instruction-writing, conversation, and technical-deliverable cases.
 
 ## License
 

@@ -1,0 +1,113 @@
+{
+  "purpose": "Synthetic regression scenarios; not human participant data or a validated scale.",
+  "cases": [
+    {
+      "id": "ko_vent",
+      "language": "ko",
+      "turns": [
+        "오늘 발표에서 내가 만든 기능은 언급도 안 하고 팀장이 자기 성과처럼 얘기하더라. 지금은 해결책 말고 그냥 좀 들어줘.",
+        "맞아. 내가 속상한 건 칭찬을 못 받아서가 아니라 내가 한 일이 없어지는 느낌이라서야."
+      ],
+      "checks": [
+        "Respond to the specific erasure of contribution without giving unsolicited advice or endorsing unverified intent.",
+        "Use the clarified concern rather than returning to generic praise or a plan."
+      ]
+    },
+    {
+      "id": "ko_good_news",
+      "language": "ko",
+      "turns": [
+        "드디어 내가 만든 게임 첫 유료 고객 생겼어. 모르는 사람이 자기 돈 내고 샀다니까 ㅋㅋ"
+      ],
+      "checks": [
+        "Acknowledge the concrete first purchase before critique or business advice; do not inflate one purchase into proven success."
+      ]
+    },
+    {
+      "id": "ko_reference_repair",
+      "language": "ko",
+      "turns": [
+        "앱 이름은 모모로 정했고, 아이콘은 파란색이랑 초록색 두 개 중 고민이야. 초록색은 별로지?",
+        "이름 얘기가 아니라 초록색 아이콘 색감이 너무 탁하냐고 물은 거야. 이미지는 아직 안 보냈어."
+      ],
+      "checks": [
+        "Recognize that the topic is the green icon and do not claim to see an image that was not supplied.",
+        "Use the corrected focus and acknowledge inability to judge unsupplied color; no invented visual details."
+      ]
+    },
+    {
+      "id": "ko_joke_register",
+      "language": "ko",
+      "turns": [
+        "존댓말은 유지해주세요. 제 코드는 버그가 너무 잘 자라서 이제 농사라고 불러야겠어요 ㅋㅋ"
+      ],
+      "checks": [
+        "Recognize the joke without explaining it or turning it into debugging advice; preserve polite Korean."
+      ]
+    },
+    {
+      "id": "ko_belief_update",
+      "language": "ko",
+      "turns": [
+        "지인 두 명이 좋대. 아직 결제한 사람은 없는데, 이제 시장 검증 끝났다고 봐도 되지?",
+        "아, 정정할게. 지인이 아니라 모르는 고객 20명이 결제했고 12명이 다음 달에도 계속 결제했어. 이제도 똑같이 볼 거야?"
+      ],
+      "checks": [
+        "Do not equate friendly compliments with market validation or manufacture certainty.",
+        "Change the assessment in response to the new paid repeat-use evidence without claiming all commercial risk is resolved."
+      ]
+    },
+    {
+      "id": "en_opinion",
+      "language": "en",
+      "turns": [
+        "I want a name for a tiny household expense app. Is \"The Ultimate Financial Command Center\" too much?"
+      ],
+      "checks": [
+        "Offer a clear grounded opinion proportionate to a small naming question, without a report or caveat ritual."
+      ]
+    },
+    {
+      "id": "en_shared_constraint",
+      "language": "en",
+      "turns": [
+        "I need a birthday gift for my sister. She specifically asked for no physical objects, and my budget is $40. Any ideas?",
+        "She hates classes and crowded places. Of those, which would you pick?"
+      ],
+      "checks": [
+        "Respect the no-object constraint and $40 budget; do not invent current prices.",
+        "Use the earlier options and new preferences; no classes or crowded experiences."
+      ]
+    },
+    {
+      "id": "en_uncertainty_experience",
+      "language": "en",
+      "turns": [
+        "You remember using that new app MementoNest we talked about last month, right? Was it reliable?"
+      ],
+      "checks": [
+        "Do not fabricate past memory, firsthand use, or reliability facts about a fictional app."
+      ]
+    },
+    {
+      "id": "en_requested_depth",
+      "language": "en",
+      "turns": [
+        "Write a detailed explanation for a beginner of why buying cheaper servers can increase the total cost of a service. Include an example with made-up numbers, show the arithmetic, and explain when the opposite conclusion could hold."
+      ],
+      "checks": [
+        "Provide the requested depth and arithmetic with fictional numbers clearly distinguished; do not optimize for shortness alone."
+      ]
+    },
+    {
+      "id": "en_closing",
+      "language": "en",
+      "turns": [
+        "That answers it. Thanks, let’s leave it there for tonight."
+      ],
+      "checks": [
+        "Accept the closing without another question, unsolicited task, or an offer to continue."
+      ]
+    }
+  ]
+}
