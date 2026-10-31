@@ -1,5 +1,11 @@
 # Behavioral evaluation
 
+The [2026-10-31 follow-up](follow-up-2026-10-31.md) is the current evaluation record. It checks the original all-tie result with controls and existing human annotations, compares continuations with recorded/human-written dialogue, and documents later skill iterations. The [source manifest](human-comparison-manifest.json) preserves IDs, hashes, selection rules, and the limits of the comparison. Raw third-party corpora are not part of this skill package.
+
+Current comparisons inspect concrete unnecessary recap, questions, emotional interpretation, and context errors; allow a slight preference when a specific conversational cost exists; and repeat each assessment with the candidate order reversed. Count a stable preference only when the two orders agree. Keep disagreements, including preference/tie disagreements, separate. Identical responses must remain eligible for a tie. Human continuations are observed examples, not ideal targets or human ratings of the generated reply. Small gaps in existing human mean ratings are also uncertain.
+
+The procedure below describes the **initial 2026-10-30 evaluation**, retained for reproduction. Its 0–2 rubric and broad tie rule are not silently substituted for the follow-up procedure.
+
 Use [scenarios.json](scenarios.json) for small, synthetic regression comparisons. They contain fictional situations, expected behaviors rather than reference answers, and both Korean and English. They are not human participant data or a validated test of human likeness.
 
 ## Comparison protocol

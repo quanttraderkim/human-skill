@@ -10,6 +10,7 @@ A conversation skill for AI assistants: follow what a person means, keep track o
 - **Use the shared context.** Apply constraints and corrections instead of starting over after every message.
 - **Have a reason for your view.** Resist pressure to agree; update when the evidence changes.
 - **Let conversation develop.** Ask a connected follow-up when it helps, without turning every reply into an interview.
+- **Leave room for the other person.** A brief reaction or provisional reading can be enough; use the next turn to repair a misunderstanding.
 - **Give the detail the task needs.** A brief reaction can be enough; a requested explanation still deserves depth.
 - **Stay honest.** Preserve meaningful uncertainty. Never invent experience, feelings, memory, or completed actions.
 
@@ -70,7 +71,7 @@ The reusable instructions are in [SKILL.md](SKILL.md). Install the folder using 
 
 Loading a skill does not prove that an answer follows it. The [evaluation protocol](evaluation/README.md) and [Korean/English scenarios](evaluation/scenarios.json) compare the original skill, revision, and a revision with selected STE-inspired output constraints. Multi-turn cases use each condition's actual previous replies. Scores from a model assessor are diagnostic, not human validation.
 
-The [2026-10-30 comparison](evaluation/results-2026-10-30.md) contains 108 generated replies. The assessor tied the original and revision in all 24 direct dialogue comparisons. Improved perceived human likeness remains unverified.
+The [initial 2026-10-30 comparison](evaluation/results-2026-10-30.md) contains 108 generated replies and tied the original and first revision in all 24 comparisons. The [2026-10-31 follow-up](evaluation/follow-up-2026-10-31.md) checks why, uses observed human continuations and existing human quality ratings, and records the later skill changes. On six fresh final contexts, the final revision received two stable preferences, one tie, and three order-sensitive judgments against the first revision. This is limited model-assessed evidence, not demonstrated human satisfaction.
 
 Instructions guide behavior; results vary by model and context. Report a failing prompt and response when suggesting an improvement, using fictional or anonymized examples.
 

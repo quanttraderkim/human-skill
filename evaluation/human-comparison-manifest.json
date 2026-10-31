@@ -1,0 +1,339 @@
+{
+  "selection": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "source_languages": [
+      "English"
+    ],
+    "development_cases": [
+      "sw_2397-7",
+      "sw_2608-23",
+      "sw_2806-6",
+      "ed_hit_5303_conv_10606_2",
+      "ed_hit_11325_conv_22651_2",
+      "ed_hit_11181_conv_22363_2"
+    ],
+    "unseen_test_cases": [
+      "sw_2466-12",
+      "sw_3087-7",
+      "sw_3746-4",
+      "sw_3236-4",
+      "sw_3338-10",
+      "sw_3530-22",
+      "ed_hit_5928_conv_11856_4",
+      "ed_hit_3390_conv_6781_2",
+      "ed_hit_8396_conv_16793_4",
+      "ed_hit_4517_conv_9035_2",
+      "ed_hit_2595_conv_5190_4",
+      "ed_hit_171_conv_343_2"
+    ],
+    "versions": [
+      "v1",
+      "v2",
+      "v3"
+    ],
+    "sample_selection": "Manually selected from deterministic candidate pool before any generated corpus-based replies; benign topics and no target autobiographical claims. Convenience sample, not random-population inference.",
+    "design": [
+      "Same quoted human context in every version. Genuine next human reply withheld during generation.",
+      "Development set used to identify failures and edit; final test replies not generated until skill and rubric frozen.",
+      "AI comparisons use two repetitions per final test case; human reference is one observed continuation, not an ideal answer.",
+      "All candidate histories are held fixed for a one-turn continuation test, not a free-running conversation.",
+      "Both forward and reversed candidate orders; order disagreements reported separately.",
+      "Evaluation controls include identical replies, objective damage, and injected subtle excess wording. These are construct controls, not human preference labels.",
+      "No score threshold tuning after final test; no anthropomorphic identity claims required."
+    ],
+    "hashes": {
+      "development-cases.json": "b28d3b812d82b888b5fa48aec03f971d8c77ee442fdb515bf8221457029884a2",
+      "test-cases.json": "1d2e6427935711326332d5d29948d36fb58002c537f055873a247182b90b1dcc",
+      "rubric-v2.txt": "6edd49e61a5e1070823b86912e3f2f30444035b4992bf692a308557fcfac9f67",
+      "controls.json": "262fdf115bcae335e337f40c4bebe2693d49a90c521f2ae9f990e79fd36396d8",
+      "v3.md": "c13b71ca1b0ceed05c1e93316f0eb4d20f2b8b901068506e5bd6d42cb30012f2"
+    },
+    "test_output_freeze": "v3 frozen before any test-case AI generation; author had reviewed all source windows to select them, so this is output-held-out rather than a fully blinded source selection.",
+    "final_addendum": {
+      "version": "v4",
+      "reason": "User emphasized human imperfection during v3 assessment. Added partial contributions, provisional readings, and repair without deliberate factual errors.",
+      "generation": "One fresh continuation for each of the 12 fixed test contexts; compare to matched v2 and v3 r1 plus real human continuation, in both candidate orders.",
+      "timing": "Source windows and some v3 test responses had already been reviewed. This is a transparent follow-up, not a new independent source holdout.",
+      "sha256": "888bc5eaf8ab420d981750b0186ffd31714220f4d77f08f57edb709952eb771e"
+    },
+    "final_addendum_v5": {
+      "reason": "v4 still asked a question in 11/12 matched contexts versus 8/12 human continuations; incidental factual correction also displaced the live topic. User emphasized imperfect, jointly built conversation.",
+      "changes": "Illustrate a complete reaction without a follow-up; avoid incidental fact-checking detours without endorsing false premises.",
+      "validation": "One new reply per fixed test context, v2/v4/v5/human compared in both orders, plus same six regression cases. This is a further iteration on previously inspected cases, not independent generalization.",
+      "sha256": "67eafffbb796bb4a78344c6b75ed60dc9069692fbe4c4d3953b663a59ac406f2"
+    }
+  },
+  "fresh_selection": {
+    "seed": 73105,
+    "cases": 6,
+    "versions": [
+      "v2",
+      "v5"
+    ],
+    "selection": "Three new Switchboard conversations outside the previously inspected 50 candidate windows and three EmpatheticDialogues test-split conversations; automatic filters; no source text or AI output inspected before v5 freeze.",
+    "limitations": "Small convenience sample, model may have seen public data in training, English only, one generation per version."
+  },
+  "source_files": [
+    {
+      "filename": "switchboard.zip",
+      "url": "https://zissou.infosci.cornell.edu/convokit/datasets/switchboard-corpus/switchboard-corpus.zip",
+      "bytes": 5810437,
+      "sha256": "c903ef6542a9838d23fe5cf00c4cfc4727ca54cadb55c61916f090498141c817"
+    },
+    {
+      "filename": "empathetic.tar.gz",
+      "url": "https://dl.fbaipublicfiles.com/parlai/empatheticdialogues/empatheticdialogues.tar.gz",
+      "bytes": 28022709,
+      "sha256": "56f234d77b7dd1f005fd365bb17769cfe346c3c84295b69bc069c8ccb83be03d"
+    },
+    {
+      "filename": "empathetic-license.txt",
+      "url": "https://raw.githubusercontent.com/facebookresearch/EmpatheticDialogues/main/LICENSE",
+      "bytes": 19332,
+      "sha256": "82656a050544ab820c9aa7b61433f5181f8e80cacd042377140962a3e3eb5721"
+    }
+  ],
+  "windows": [
+    {
+      "id": "sw_2397-7",
+      "source": "Switchboard",
+      "source_conversation": "2397-0",
+      "target_id": "2397-7",
+      "topic": "HOBBIES AND CRAFTS",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "6b510ef385190bd0aaed24d3743b8d1604baee8f883c0d3ee5bf15e4b96a94f4",
+      "split": "development"
+    },
+    {
+      "id": "sw_2608-23",
+      "source": "Switchboard",
+      "source_conversation": "2608-0",
+      "target_id": "2608-23",
+      "topic": "RECIPES/FOOD/COOKING",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "27717996108c8079ae1888600db9f23c95dcf407324109a70ad6c78d49e68790",
+      "split": "development"
+    },
+    {
+      "id": "sw_2806-6",
+      "source": "Switchboard",
+      "source_conversation": "2806-0",
+      "target_id": "2806-6",
+      "topic": "PETS",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "2a861e96400493435a04cfc5de79ed74cf1ca7eb60b945494390a9f33ff7c03f",
+      "split": "development"
+    },
+    {
+      "id": "ed_hit_5303_conv_10606_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:5303_conv:10606",
+      "target_id": "2",
+      "topic": "angry",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "e1694c2710c09ff9222d8da4f2b7a0413db7126b4e8dabd877453a0817aedd09",
+      "split": "development"
+    },
+    {
+      "id": "ed_hit_11325_conv_22651_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:11325_conv:22651",
+      "target_id": "2",
+      "topic": "caring",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "e9eae0254c739f9f9d8b46e863dafedded696a1ba22707c488822e706e5bd4c1",
+      "split": "development"
+    },
+    {
+      "id": "ed_hit_11181_conv_22363_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:11181_conv:22363",
+      "target_id": "2",
+      "topic": "joyful",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "4f4f98abeededa2a6c8abd620fc8fe2fdb1b082905c844b6c8b1df2f8f4e04e2",
+      "split": "development"
+    },
+    {
+      "id": "sw_2466-12",
+      "source": "Switchboard",
+      "source_conversation": "2466-0",
+      "target_id": "2466-12",
+      "topic": "BOOKS AND LITERATURE",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "70f04c9d0b0f7f28cd659c59dd10549d1a62702cb5e734e332d020e0ffe48998",
+      "split": "test"
+    },
+    {
+      "id": "sw_3087-7",
+      "source": "Switchboard",
+      "source_conversation": "3087-0",
+      "target_id": "3087-7",
+      "topic": "MUSIC",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "e7a885bbcf0741144bb9be8926f6a14dae383311771c82886d5a636052003a90",
+      "split": "test"
+    },
+    {
+      "id": "sw_3746-4",
+      "source": "Switchboard",
+      "source_conversation": "3746-0",
+      "target_id": "3746-4",
+      "topic": "HOBBIES AND CRAFTS",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "0ad40fe98b1eaa0ee201ef5bb100cea69a0983a015fd9d9c7bb55efb55aef71e",
+      "split": "test"
+    },
+    {
+      "id": "sw_3236-4",
+      "source": "Switchboard",
+      "source_conversation": "3236-0",
+      "target_id": "3236-4",
+      "topic": "RECYCLING",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "551aac9a60c7c9c23082fc7ec92e4be4de13d57393b7cabcacc9a189b85c0eae",
+      "split": "test"
+    },
+    {
+      "id": "sw_3338-10",
+      "source": "Switchboard",
+      "source_conversation": "3338-0",
+      "target_id": "3338-10",
+      "topic": "HOBBIES AND CRAFTS",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "f83c6846e1944d4a571c7ee3ddd349670a94eb2381a6461676b7e7cfe4709bda",
+      "split": "test"
+    },
+    {
+      "id": "sw_3530-22",
+      "source": "Switchboard",
+      "source_conversation": "3530-0",
+      "target_id": "3530-22",
+      "topic": "BOOKS AND LITERATURE",
+      "normalization": "removed transcription markup, retained words and disfluencies",
+      "source_sha256": "b16684aff27e527a1f37258c9cfb167ba36bdb1d73f2e043fb4d0e0208598ee1",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_5928_conv_11856_4",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:5928_conv:11856",
+      "target_id": "4",
+      "topic": "excited",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "d47e1866214c5e25326f5fa3efc269bc049decd69172f4786a46019e69d75581",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_3390_conv_6781_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:3390_conv:6781",
+      "target_id": "2",
+      "topic": "sentimental",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "7ac843d1cde05b45b5897b8567041b4283b5aa8a076a7d1d761b103d7fb9f4b8",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_8396_conv_16793_4",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:8396_conv:16793",
+      "target_id": "4",
+      "topic": "angry",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "bb6e0565277b6c950f7e51b08a32ff1e2b6f1448485326826876a571ecc5c6fa",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_4517_conv_9035_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:4517_conv:9035",
+      "target_id": "2",
+      "topic": "confident",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "cc709836a539427bbe3ac2acaf166b7261933ebcd9035d98e0f36fdcbd4736d2",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_2595_conv_5190_4",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:2595_conv:5190",
+      "target_id": "4",
+      "topic": "annoyed",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "fd21ab06fd8dc10d540290e345f312576fe0f3377b2e9eb68593be3c4e5da507",
+      "split": "test"
+    },
+    {
+      "id": "ed_hit_171_conv_343_2",
+      "source": "EmpatheticDialogues",
+      "source_conversation": "hit:171_conv:343",
+      "target_id": "2",
+      "topic": "jealous",
+      "normalization": "decoded dataset _comma_ token only",
+      "source_sha256": "4e9c2aed08009c1ecadc016bc2a439e5464f9c1a6e9f607c5530cdc2ef9332a6",
+      "split": "test"
+    },
+    {
+      "id": "fresh_sw_3365-6",
+      "source": "Switchboard",
+      "source_conversation": "3365-0",
+      "target_id": "3365-6",
+      "topic": "RECIPES/FOOD/COOKING",
+      "normalization": "transcription-markup removal only",
+      "source_sha256": "88d5fdaab52e5cfb9eea0eee8260712f04c0573729966e2d9e057886324f55a7",
+      "split": "fresh"
+    },
+    {
+      "id": "fresh_sw_3013-8",
+      "source": "Switchboard",
+      "source_conversation": "3013-0",
+      "target_id": "3013-8",
+      "topic": "RECIPES/FOOD/COOKING",
+      "normalization": "transcription-markup removal only",
+      "source_sha256": "1f9415b257c7c50001c764f14ec3ffcaf996dbb0b956065707d7625622061162",
+      "split": "fresh"
+    },
+    {
+      "id": "fresh_sw_3069-12",
+      "source": "Switchboard",
+      "source_conversation": "3069-0",
+      "target_id": "3069-12",
+      "topic": "BOOKS AND LITERATURE",
+      "normalization": "transcription-markup removal only",
+      "source_sha256": "5d888cfbfbb580fde1f55044599e13e09ddaf645118e79d3e5e2affc86bd3464",
+      "split": "fresh"
+    },
+    {
+      "id": "fresh_ed_hit_10087_conv_20175_2",
+      "source": "EmpatheticDialogues-test",
+      "source_conversation": "hit:10087_conv:20175",
+      "target_id": "2",
+      "topic": "disgusted",
+      "normalization": "_comma_ decoded only",
+      "source_sha256": "40271aaf4510de1086e4c13869e7bb48d17606bf125331aed04e27089264a67e",
+      "split": "fresh"
+    },
+    {
+      "id": "fresh_ed_hit_5958_conv_11917_2",
+      "source": "EmpatheticDialogues-test",
+      "source_conversation": "hit:5958_conv:11917",
+      "target_id": "2",
+      "topic": "sad",
+      "normalization": "_comma_ decoded only",
+      "source_sha256": "caa6f1fb9b8ef2bbe51e866ad598a06f39ca197816fa205c9999ee3fd1f26807",
+      "split": "fresh"
+    },
+    {
+      "id": "fresh_ed_hit_3489_conv_6979_2",
+      "source": "EmpatheticDialogues-test",
+      "source_conversation": "hit:3489_conv:6979",
+      "target_id": "2",
+      "topic": "sentimental",
+      "normalization": "_comma_ decoded only",
+      "source_sha256": "8175d1ea568d64a5379d8fcc35060c99ee78d34eebf281248a8008c3612a0999",
+      "split": "fresh"
+    }
+  ]
+}
